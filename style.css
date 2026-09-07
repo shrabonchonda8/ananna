@@ -1,0 +1,26 @@
+.music-list {
+  background: rgba(255, 255, 255, 0.95);
+  color: #e91e63;
+  padding: 20px;
+  border-radius: 22px;
+  box-shadow: 0 5px 25px rgba(194, 24, 91, 0.5);
+  animation: popup .6s;
+}
+
+.music-list h2 {
+  margin-bottom: 10px;
+}
+
+.music-list button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  color: white;
+  box-shadow: none;
+}
+
+#nowPlaying {
+  margin-top: 12px;
+  font-weight: bold;
+}

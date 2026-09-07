@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Ananna 💗</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+overflow-y:auto;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(
+    135deg,
+    #ff4f9a,
+    #ffb6d9,
+    #ffd6e8
+  );
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* 🌷 চার কোণার ফুল */
+
+.rose{
+  position:fixed;
+  font-size:55px;
+  filter:drop-shadow(0 0 12px #ff1493);
+  animation:roseGlow 2s infinite alternate;
+  z-index:5;
+}
+
+.r1{
+  top:10px;
+  left:10px;
+}
+
+.r2{
+  top:10px;
+  right:10px;
+}
+
+.r3{
+  bottom:10px;
+  left:10px;
+}
+
+.r4{
+  bottom:10px;
+  right:10px;
+}
+
+@keyframes roseGlow{
+
+  from{
+    transform:scale(1) rotate(-5deg);
+  }
+
+  to{
+    transform:scale(1.15) rotate(5deg);
+  }
+
+}
+
+
+/* Main container */
+
+.container{
+  width:92%;
+  max-width:450px;
+  text-align:center;
+  padding:30px 0;
+}
+
+
+/* Welcome */
+
+#welcome{
+  animation:fade 1.5s;
+}
+
+#welcome h1{
+  font-size:42px;
+  text-shadow:0 0 20px #c2185b;
+}
+
+#welcome p{
+  margin-top:15px;
+  font-size:18px;
+}
+
+
+/* Buttons */
+
+button{
+
+  border:none;
+
+  border-radius:30px;
+
+  padding:13px 24px;
+
+  margin:8px 5px;
+
+  background:white;
+
+  color:#e91e63;
+
+  font-weight:bold;
+
+  font-size:16px;
+
+  box-shadow:0 5px 20px #c2185b;
+
+  cursor:pointer;
+
+}
+
+button:active{
+
+  transform:scale(.95);
+
+}
+
+
+/* Birthday */
+
+#birthday{
+
+  display:none;
+
+  animation:fade 1s;
+
+}
+
+.cake{
+
+  font-size:95px;
+
+  animation:bounce 1.5s infinite;
+
+}
+
+h1{
+
+  font-size:34px;
+
+  text-shadow:0 0 15px #c2185b;
+
+}
+
+.name{
+
+  font-size:43px;
+
+  font-weight:bold;
+
+  margin:10px;
+
+}
+
+
+/* Letter */
+
+#letter{
+
+  display:none;
+
+  background:white;
+
+  color:#c2185b;
+
+  padding:22px;
+
+  border-radius:20px;
+
+  margin-top:15px;
+
+  animation:popup .7s;
+
+}
+
+#letter h2{
+
+  margin-bottom:12px;
+
+}
+
+
+/* 📸 Photo */
+
+#photos{
+
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(70,0,35,.85);
+
+  justify-content:center;
+
+  align-items:center;
+
+  z-index:20;
+
+}
+
+.photoBox{
+
+  width:88%;
+
+  max-width:380px;
+
+  background:white;
+
+  padding:12px;
+
+  border-radius:22px;
+
+  text-align:center;
+
+  animation:popup .6s;
+
+}
+
+.photoBox img{
+
+  width:100%;
+
+  height:350px;
+
+  object-fit:cover;
+
+  border-radius:15px;
+
+}
+
+.photoBox h2{
+
+  color:#e91e63;
+
+  margin:8px;
+
+}
+
+.close{
+
+  position:absolute;
+
+  top:25px;
+
+  right:20px;
+
+  background:#ff4f9a;
+
+  color:white;
+
+}
+
+.arrow{
+
+  background:#ff69b4;
+
+  color:white;
+
+  font-size:20px;
+
+}
+
+
+/* 🎵 Music */
+
+#musicBox{
+
+  display:none;
+
+  margin-top:10px;
+
+  animation:popup .6s;
+
+}
+
+.music-list{
+
+  background:rgba(255,255,255,.95);
+
+  color:#e91e63;
+
+  padding:20px;
+
+  border-radius:22px;
+
+  box-shadow:0 5px 25px rgba(194,24,91,.5);
+
+}
+
+.music-list h2{
+
+  margin-bottom:10px;
+
+}
+
+.music-list button{
+
+  display:block;
+
+  width:100%;
+
+  margin:8px 0;
+
+  background:linear-gradient(
+    135deg,
+    #ff69b4,
+    #ff1493
+  );
+
+  color:white;
+
+  box-shadow:none;
+
+}
+
+#nowPlaying{
+
+  margin-top:12px;
+
+  font-weight:bold;
+
+}
+
+#player{
+
+  width:100%;
+
+  margin-top:10px;
+
+}
+
+
+/* 💗 Falling Hearts */
+
+.heart{
+
+  position:fixed;
+
+  top:-30px;
+
+  font-size:25px;
+
+  animation:fall 5s linear infinite;
+
+  z-index:2;
+
+}
+
+@keyframes fall{
+
+  to{
+
+    transform:
+      translateY(110vh)
+      rotate(360deg);
+
+    opacity:0;
+
+  }
+
+}
+
+
+/* Animations */
+
+@keyframes bounce{
+
+  50%{
+
+    transform:translateY(-18px);
+
+  }
+
+}
+
+@keyframes fade{
+
+  from{
+
+    opacity:0;
+
+    transform:scale(.8);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:scale(1);
+
+  }
+
+}
+
+@keyframes popup{
+
+  from{
+
+    transform:scale(.5);
+
+    opacity:0;
+
+  }
+
+  to{
+
+    transform:scale(1);
+
+    opacity:1;
+
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- 🌷 চার কোণায় ফুল -->
+
+<div class="rose r1">🌷</div>
+
+<div class="rose r2">🌷</div>
+
+<div class="rose r3">🌷</div>
+
+<div class="rose r4">🌷</div>
+
+
+<div class="container">
+
+
+<!-- 💗 Welcome -->
+
+<div id="welcome">
+
+<h1>💗 Welcome 💗</h1>
+
+<p>
+Monu তোমার জন্য একটি বিশেষ
+Birthday Surprise 🎁
+</p>
+
+<button onclick="startBirthday()">
+
+🎁 Open Surprise
+
+</button>
+
+</div>
+
+
+
+<!-- 🎂 Birthday -->
+
+<div id="birthday">
+
+
+<div class="cake">
+
+🎂
+
+</div>
+
+
+<h1>
+
+Happy Birthday To 🎉
+
+</h1>
+
+
+<div class="name">
+
+অনন্যা
+
+</div>
+
+
+<p>
+
+💝 আমি খারাপ কুত্তার কাছ থেকে এইটা তোমার জন্য ছোট্ট একটা উপহার 🙂💝
+
+</p>
+
+
+<!-- Buttons -->
+
+<div>
+
+<button onclick="openLetter()">
+
+💌 Open Letter
+
+</button>
+
+
+<button onclick="openPhotos()">
+
+📸 Open Pictures
+
+</button>
+
+</div>
+
+
+
+<!-- 🎵 Music Button -->
+
+<button onclick="openMusic()">
+
+🎵 Open Your FVT Music 🎵
+
+</button>
+
+
+
+<!-- 🎵 Music Options -->
+
+<div id="musicBox">
+
+<div class="music-list">
+
+<h2>
+
+🎧 choice your fvt music
+
+</h2>
+
+
+<button onclick="playMusic('/song.Monu.1.m4a')">
+
+🎵 Happy birthday monu.01 ▶️
+
+</button>
+
+
+<button onclick="playMusic('/song.monu.2.m4a')">
+
+🧁 Happy birthday monu.02 ▶️
+
+</button>
+
+
+<button onclick="playMusic('/ song.monu.3.m4a')">
+
+🎂 Happy birthday monu.03 ▶️
+
+</button>
+
+
+<button onclick="playMusic('/song.monu.8.m4a')">
+
+💟 তোমার খোলা হাওয়া, 04 ▶️
+
+</button>
+
+<button onclick="playMusic('/song.monu.5.m4a')">
+
+  🌃 দীপান্বিতা, 05 ▶️
+  
+</button>
+
+<button onclick="playMusic('/song.monu.6.m4a')">
+
+  🚲 চলো না সুজন,  06 ▶️
+  
+</button>
+
+<button onclick="playMusic('/song.monu.7.m4a')">
+
+  🥀 ওহে কি করিলে বলো..07 ▶️
+  
+</button>
+
+
+<p id="nowPlaying">
+
+তোমার পছন্দের গান গোলা, যতো টুকু জানতে পেরেছি ততোটুক চেষ্টা করেছি 🙂🫠 💕
+
+</p>
+
+
+<audio
+id="player"
+controls>
+</audio>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 💌 Letter -->
+
+<div id="letter">
+
+<h2>
+
+💖 Dear Monu💫❤️‍🩹
+
+</h2>
+
+
+<p>
+
+শুভ জন্মদিন অনন্যা! 🎂🎉
+
+<br><br>
+
+
+প্রথমেই তোমাকে জানাই তোমার এই জন্মদিনের অনেক অনেক শুভেচ্ছা ও আগামী দিনের জন্য শুভকামনা 💝❤️‍🩹
+<br><br>
+আর তুমি মানো আর না মানো, তুমি আসোলেই অনেক lucky, 💝
+<br><br>
+কারন তুমি যেই মাসে জন্মগ্রহণ করছো,  সেই একই সেপ্টেম্বর মাসে ভগবান শ্রী কৃষ্ণ, রাধা,গণেশ ঠাকুরের জন্ম হয়েছিলো,, 🌷🫠
+<br><br>
+অর্থাৎ তুমি অনেক ভাগ্যবান,  তাদের কৃপা তোমার উপর সদা সর্বদা বর্ষিত হোক, 🌷🙏 এই প্রার্থনা করি, 🌷🙏
+<br><br>
+আর তোমার জন্য আমিও নিজেকে অনেকটা ভাগ্যবান feel করি, 🫠🙂,  
+<br><br>
+আর তোমার মা বাবাকে অনেক অনেক ধন্যবাদ জানাই,🫠🙂
+<br><br>
+কারণ তারা যদি তোমাকে জন্ম না দিতো, 
+তাহলে তোমাকে আমি কখনোই হয় তো পেতাম না,  তোমার সাথে আমারও কখনো পরিচয় হতো না,,  🫠🙂❤️‍🩹 ANW সব কিছুর জন্য ভগবান ও তোমার মা বাবা কে অনেক ধন্যবাদ জানাই,,🙏🫠🌷
+<br><br>
+আর এখন তো আমি শুধু নিজেকে ভাগ্যবান ভাবতেছি, যে দিন তুমি একেবারে আমার হয়ে যাবে তোমাকে যে দিন একেবারে আমার করে পেয়ে যাবো,  সেদিন আমি আসলেই মনে করবো যে আমি সত্যিই অনেক ভাগ্যবান, 😌❤️‍🩹 
+<br><br>
+শুনেছি ভগবানের কাছে চোখের জল ফেলে যে জিনিস চাইবো, সেটাই না কি ভগবান দিয়ে দেন,, 
+তাই আমি হয়তো প্রতিদিন পারি না, কিন্তু যেদিন পারি সেদিন একবারে মন খুলে চোখের জল ফেলে ভগবানের কাছে শুধু তোমাকেই চাই,,
+<br><br>
+এখন কথা হচ্ছে তোমায় নিয়ে,  আমার দেখা মতো তুমিই প্রথম মেয়ে যে কিনা আমার মতো, সিংহের মতো একটা ছেলে কে তোমার জন্য ছেসড়া কুত্তার মতো বানিয়ে দিলে, 🫠🙂❤️‍🩹 আসল কথা হলো তুমি হলে চাঁদের মতো, যেমন চাঁদ কে চাওয়ার জন্য হাজারো তারা আকাশে ভেসে থাকে, ঠিক তেমনি তোমাকে পাওয়ার জন্যও হাজারো ছেলে অপেক্ষা করে,,,😌
+<br><br>
+ so আমি শ্রাবণ তোমার জন্য এতোটা special নাও হতে পারি, তবে এটা মনে রেখো তুমি আমার কাছে অনেক special ছিলে,আছো, আর বাকিটা জীবন থাকবে,,🫠❤️‍🩹
+ <br><br>
+হয়তো আমার আগে অনেকেই তোমাকে birthday wish করে ফেলেছে, এবং অনেক দামি দামি gift ও করেছে,, কিন্তু তুমি নিশ্চয়ই জানো আমার কাছে ভালোবাসা ছাড়া আর কিছুই দেওয়ার নাই,,😌💝🌷
+<br><br>
+তাই আমি আমার মনের যতোটুকু ভালোবাসা আছে, সবটুকু দিয়ে তোমাকে এই ছোট্ট একটা website বানিয়ে gift করলাম, এছাড়া আর কিছু দেওয়ার মতো নাই, আর হ্যাঁ এটাই ছিলো আমার website develop এর first  website, 🫠❤️‍🩹,
+<br><br>
+তাই আমি গরিবের কাছ থেকে দামি উপহার আশাও করা যায় না, 🫠,
+<br><br>
+যাই হোক আজকের এই আনন্দের দিনে তোমাকে অন্যান্য ইমোশনাল কথা বার্তা বলে আমি তোমাকে ইমোশনাল করতে চাই না,😌💝
+<br><br>
+ আমি চাই যে তুমি সব সময় Happy থাকো, 😌❤️‍🩹🌷,
+ <br><br>
+এইটুকু কামনা করি ভগবানের কাছে,  ভগবান যেন তোমাকে সারাজীবন খুশি রাখেন,  
+<br><br>
+তোমার জীবনে যেন কোনো দুঃখ touch ও করতে না পারে,🫠💝
+<br><br>
+আরো অনেক কথা বলার ছিলো তবে কেমনে বলবো,  বলার কোনো ভাষা খুঁজে পাচ্ছি না,, ❤️‍🩹🙂
+<br><br>
+আমি যে তোমাকে কতটা ভালোবাসি, সেটাও কোনো ভাষায় প্রকাশ করা আমার পক্ষে সম্ভব না 😌💝🌷,
+<br><br>
+শুধু একটা কথাই বলতে চাই,  আমি তোমাকে আজ-ও ভালোবাসি, আগামীকালও বাসতে চাই, এমন কি সারাজীবন এভাবে ভালোবেসে যেতে চাই প্রিয়,,🫠❤️‍🩹💝🌷
+<br><br>
+i really love you, 💝🌷
+<br><br>
+
+আর ঈশ্বরের কাছে একটাই প্রার্থনা করি, আমি হয়তো তোমার সকল ইচ্ছা পূরণ করতে পারি না,  তবে ঈশ্বর যেন
+তোমার সব স্বপ্ন পূরণ করে,😌❤️‍🩹💝🌷 🌸
+
+<br><br>
+
+আবারও অনেক অনেক
+শুভ জন্মদিন! 💗🎁
+<br><br>
+ও আবারও তোমাকে বলি i love you monu,, i really love you so much, 😌❤️‍🩹💝🌷
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- 📸 Photo Gallery -->
+
+<div id="photos">
+
+
+<button
+class="close"
+onclick="closePhotos()">
+
+✕
+
+</button>
+
+
+<div class="photoBox">
+
+
+<img
+id="photo"
+src="photo1.jpg"
+>
+
+
+<h2>
+
+💗 Beautiful Memories 💗
+
+</h2>
+
+
+<button
+class="arrow"
+onclick="previousPhoto()">
+
+❮
+
+</button>
+
+
+<button
+class="arrow"
+onclick="nextPhoto()">
+
+❯
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+/* 📸 Photos */
+
+let photos = [
+
+"/img.jpg",
+
+"/file_0000000021e88208bce3dd6aff0a09ef.png",
+"/monu1.2.jpg",
+"/monu2.jpg",
+"/monu3.4.jpg",
+"/monu4.jpg",
+"/monu5.jpg",
+"/monu6.jpg",
+"/IMG-20260906-WA0061.jpg",
+"/IMG-20260906-WA0060.jpg",
+"/monu8.jpg",
+"/monu9.jpg",
+"/monu10.jpg",
+"/monu11.jpg",
+"/monu12.jpg",
+"/monu13.jpg",
+"/monu14.jpg",
+"/monu15.jpg",
+"/monu16.jpg",
+"/monu17.jpg",
+"/monu18.jpg",
+"/monu19.jpg",
+"/monu20.jpg",
+"/monu21.jpg",
+"/monu22.jpg",
+"/monu23.jpg",
+"/monu24.jpg",
+"/monu25.jpg",
+"/monu26.jpg",
+"/monu27.jpg",
+"/monu28.jpg",
+"/monu29.16.jpg",
+"/monu30.15.jpg",
+"/monu31.jpg",
+"/monu32.jpg",
+"/monu33.jpg",
+"/monu34.jpg",
+"/monu35.jpg",
+"/monu36.jpg",
+"/monu37.jpg",
+"/monu....png",
+"/monu01.jpeg",
+"/WA_1788638692251.jpeg",
+"/WA_1788639043518.jpeg",
+"/WA_1788639051896.jpeg",
+"/WA_1788639059927.jpeg",
+"/WA_1788639068260.jpeg",
+"/WA_1788639084547.jpeg",
+"/IMG-20260901-WA0001.jpg",
+"/IMG-20260901-WA0005.jpg",
+"/IMG-20260901-WA0009.jpg",
+"/IMG-20260901-WA0013.jpg",
+"/IMG-20260901-WA0014.jpg",
+"/IMG-20260901-WA0016.jpg",
+"/IMG-20260901-WA0021.jpg",
+"/IMG-20260901-WA0023.jpg",
+"/IMG-20260901-WA0030.jpg",
+
+];
+
+
+let currentPhoto = 0;
+
+
+
+/* 🎁 Start */
+
+function startBirthday(){
+
+document.getElementById("welcome")
+.style.display="none";
+
+document.getElementById("birthday")
+.style.display="block";
+
+createHearts();
+
+}
+
+
+
+/* 💌 Letter */
+
+function openLetter(){
+
+document.getElementById("letter")
+.style.display="block";
+
+}
+
+
+
+/* 📸 Open Photos */
+
+function openPhotos(){
+
+document.getElementById("photos")
+.style.display="flex";
+
+}
+
+
+
+/* Close Photos */
+
+function closePhotos(){
+
+document.getElementById("photos")
+.style.display="none";
+
+}
+
+
+
+/* Next */
+
+function nextPhoto(){
+
+currentPhoto++;
+
+if(currentPhoto >= photos.length){
+
+currentPhoto=0;
+
+}
+
+document.getElementById("photo")
+.src=photos[currentPhoto];
+
+}
+
+
+
+/* Previous */
+
+function previousPhoto(){
+
+currentPhoto--;
+
+if(currentPhoto < 0){
+
+currentPhoto=photos.length-1;
+
+}
+
+document.getElementById("photo")
+.src=photos[currentPhoto];
+
+}
+
+
+
+/* 🎵 Open Music */
+
+function openMusic(){
+
+let box =
+document.getElementById("musicBox");
+
+if(box.style.display === "block"){
+
+box.style.display="none";
+
+}else{
+
+box.style.display="block";
+
+}
+
+}
+
+
+
+/* 🎵 Play Music */
+
+function playMusic(song){
+
+let player =
+document.getElementById("player");
+
+
+player.pause();
+
+
+player.src=song;
+
+
+player.load();
+
+
+player.play();
+
+
+document.getElementById("nowPlaying")
+.innerHTML =
+"🎵 Now Playing: " + song;
+
+}
+
+
+
+/* 💗 Hearts */
+
+function createHearts(){
+
+setInterval(function(){
+
+let heart =
+document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML =
+["🌼","💕","💖","🌸","🌷",]
+[Math.floor(Math.random()*4)];
+
+heart.style.left =
+Math.random()*100+"%";
+
+heart.style.animationDuration =
+(3+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+
+setTimeout(function(){
+
+heart.remove();
+
+},6000);
+
+
+},500);
+
+} 
+
+
+</script>
+dj rupon
+</body>
+</html> 
